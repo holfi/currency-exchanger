@@ -32,7 +32,7 @@ public class ConvertController {
         model.addAttribute("currencies", xmlParser.getCurrencies());
         model.addAttribute("converter", new Converter());
 
-        return "convert";
+        return "index";
     }
 
     @PostMapping
@@ -46,7 +46,7 @@ public class ConvertController {
 
         converterService.convert(converter);
 
-        return "convert";
+        return "index";
     }
 
 }
