@@ -36,7 +36,7 @@ public class RegisterController {
             User user = userService.registerNewUser(userFromForm);
             userRepo.save(user);
         } catch (UserAlreadyExistException e) {
-            model.addAttribute("message", "An account with that email already exists");
+            model.addAttribute("message", "An account with that username already exists");
         }
 
         return "redirect:/login";

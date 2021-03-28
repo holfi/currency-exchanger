@@ -46,8 +46,6 @@ public class ConvertController {
 
         converterService.convert(converter);
 
-        System.out.println(converter);
-
         return "convert";
     }
 

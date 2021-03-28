@@ -9,14 +9,6 @@ import java.time.LocalDate;
 
 public interface HistoryRepo extends PagingAndSortingRepository<Converter, Long> {
 
-//    List<Converter> findAllByUsername(String username);
-//
-//    List<Converter> findAllByDateHistoryAndFromCurAndToCurAndUsername(LocalDate date, String from, String to, String username);
-//
-//    List<Converter> findAllByFromCurAndToCurAndUsername(String from, String to, String username);
-//
-//    List<Converter> findAllByDateHistoryAndUsername(LocalDate date, String username);
-
     Page<Converter> findAllByUsername(String username, Pageable pageable);
 
     Page<Converter> findAllByDateHistoryAndFromCurAndToCurAndUsername(LocalDate date, String from, String to, String username, Pageable pageable);

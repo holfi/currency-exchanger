@@ -5,7 +5,6 @@ import com.rowen.currency.Repo.HistoryRepo;
 import com.rowen.currency.Service.XmlParserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Controller
 @RequestMapping("/history")
@@ -50,8 +48,6 @@ public class HistoryController {
                          @PageableDefault(sort = {"dateHistory"}, direction = Sort.Direction.DESC) Pageable pageable) {
 
         Page<Converter> history;
-
-        System.out.println("date: " + dateHistory + " from:" + fromCur + " to:" + toCur);
 
         if (dateHistory == null && fromCur.equals("") && toCur.equals(""))
             history = historyRepo.findAllByUsername(user.getUsername(), pageable);
